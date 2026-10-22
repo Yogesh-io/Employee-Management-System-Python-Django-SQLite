@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Registration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-800 font-sans min-h-screen p-4 md:p-8 flex items-center justify-center">
+
+<div class="max-w-2xl w-full bg-white p-6 md:p-8 rounded-xl shadow-sm border border-slate-200 space-y-6">
+
+    <!-- Header Section -->
+    <div class="border-b border-slate-200 pb-4">
+        <h1 class="text-2xl font-bold text-slate-900 tracking-tight">Employee Registration</h1>
+        <p class="text-sm text-slate-500 mt-1">Enter employee details below to register a new member to the database.</p>
+    </div>
+
+    <!-- Registration Form -->
+<form action="" method="POST" enctype="multipart/form-data" class="space-y-6">
+    {% csrf_token %}
+
+    <div class="space-y-4 
+        [&>p]:flex [&>p]:flex-col [&>p]:gap-1.5 
+        [&_label]:text-sm [&_label]:font-semibold [&_label]:text-slate-700 
+        [&_input[type=text]]:w-full [&_input[type=text]]:px-3.5 [&_input[type=text]]:py-2 [&_input[type=text]]:border [&_input[type=text]]:border-slate-300 [&_input[type=text]]:rounded-lg [&_input[type=text]]:focus:ring-2 [&_input[type=text]]:focus:ring-indigo-500 [&_input[type=text]]:focus:outline-none 
+        [&_input[type=email]]:w-full [&_input[type=email]]:px-3.5 [&_input[type=email]]:py-2 [&_input[type=email]]:border [&_input[type=email]]:border-slate-300 [&_input[type=email]]:rounded-lg 
+        [&_input[type=number]]:w-full [&_input[type=number]]:px-3.5 [&_input[type=number]]:py-2 [&_input[type=number]]:border [&_input[type=number]]:border-slate-300 [&_input[type=number]]:rounded-lg 
+        [&_input[type=date]]:w-full [&_input[type=date]]:px-3.5 [&_input[type=date]]:py-2 [&_input[type=date]]:border [&_input[type=date]]:border-slate-300 [&_input[type=date]]:rounded-lg 
+        [&_input[type=file]]:text-sm [&_input[type=file]]:text-slate-500 [&_input[type=file]]:file:mr-4 [&_input[type=file]]:file:py-2 [&_input[type=file]]:file:px-4 [&_input[type=file]]:file:rounded-md [&_input[type=file]]:file:border-0 [&_input[type=file]]:file:text-xs [&_input[type=file]]:file:font-semibold [&_input[type=file]]:file:bg-indigo-50 [&_input[type=file]]:file:text-indigo-700 hover:[&_input[type=file]]:file:bg-indigo-150
+        [&_.errorlist]:text-red-500 [&_.errorlist]:text-xs [&_.errorlist]:mt-1 [&_.errorlist]:list-none [&_.errorlist]:p-0">
+        
+        {{ form.as_p }}
+
+    </div>
+
+    <div class="flex items-center gap-3 pt-4 border-t border-slate-200">
+        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2.5 rounded-lg text-sm transition-colors shadow-sm cursor-pointer">
+            Save
+        </button>
+
+        <a href="{% url 'view_emp' %}" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium px-5 py-2.5 rounded-lg text-sm border border-slate-300 transition-colors inline-block text-center">
+            Cancel
+        </a>
+    </div>
+
+</form>
+</div>
+
+</body>
+</html>
